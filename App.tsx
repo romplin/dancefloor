@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { colors } from './src/theme/theme';
 
-function App(): JSX.Element {
+const App: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar
@@ -20,7 +20,7 @@ function App(): JSX.Element {
       </View>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './index.web.js', // We'll create this next
+  entry: './index.web.js',
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
@@ -10,12 +10,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|js)x?$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-react', '@babel/preset-env'],
+            presets: [
+              '@babel/preset-react',
+              '@babel/preset-typescript',
+              '@babel/preset-env'
+            ],
             plugins: ['@babel/plugin-proposal-export-namespace-from'],
           },
         },
@@ -26,7 +30,7 @@ module.exports = {
     alias: {
       'react-native$': 'react-native-web',
     },
-    extensions: ['.web.js', '.js', '.tsx', '.ts'],
+    extensions: ['.web.tsx', '.web.ts', '.tsx', '.ts', '.web.js', '.js'],
   },
   plugins: [
     new HtmlWebpackPlugin({

@@ -1,4 +1,7 @@
 {
+  "name": "dancefloor",
+  "version": "0.0.1",
+  "private": true,
   "dependencies": {
     "@babel/preset-react": "^7.26.3",
     "@react-native-async-storage/async-storage": "^2.1.0",

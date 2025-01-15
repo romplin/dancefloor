@@ -1,12 +1,7 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 import { colors } from './src/theme/theme';
+import Navigation from './src/navigation/Navigation';
 
 const App: React.FC = () => {
   return (
@@ -15,9 +10,7 @@ const App: React.FC = () => {
         barStyle="light-content"
         backgroundColor={colors.primary}
       />
-      <View style={styles.header}>
-        <Text style={styles.headerText}>Dancefloor</Text>
-      </View>
+      <Navigation />
     </SafeAreaView>
   );
 };
@@ -26,16 +19,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.background,
-  },
-  header: {
-    backgroundColor: colors.primary,
-    padding: 16,
-    alignItems: 'center',
-  },
-  headerText: {
-    color: colors.textLight,
-    fontSize: 24,
-    fontWeight: 'bold',
   },
 });
 
